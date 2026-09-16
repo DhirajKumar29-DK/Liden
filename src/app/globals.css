@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Base Resets for Next.js */
+html, body {
+  background-color: #ebebeb;
+  color: #0c0c0c;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure smooth-scroll and GSAP containers work naturally */
+#content-scroll {
+  min-height: 100vh;
+}
+
+/* Ensure body and page content are ALWAYS 100% visible (Zero Black Screen) */
+body, body.hidden {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#clapat-page-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure all hero titles, subtitles, captions, and animated elements are 100% visible without static scripts */
+.hero-title,
+.hero-subtitle,
+#hero-caption,
+.has-animation,
+.has-mask,
+.caption-timeline,
+#hero-image-wrapper,
+.hero-translate {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}

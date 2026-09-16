@@ -1,0 +1,16 @@
+{
+  "name": "Nanotech Website - Creative Portfolio Agency",
+  "short_name": "Liden",
+  "description": "Premier creative design agency specializing in web development, motion design, and digital experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0c",
+  "theme_color": "#0c0c0c",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
