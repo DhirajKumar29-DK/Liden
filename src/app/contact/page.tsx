@@ -27,13 +27,20 @@ export default function ContactPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    e.stopPropagation();
+
     if (formData.verify.trim() !== "4") {
       setStatusMsg("Captcha validation failed! (1 + 3 = 4)");
       return;
     }
+
+    setIsSubmitting(true);
     setStatusMsg("Sending message...");
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -49,6 +56,8 @@ export default function ContactPage() {
       }
     } catch {
       setStatusMsg("An error occurred while sending your message.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -140,7 +149,7 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  <form method="post" onSubmit={handleSubmit} name="contactform" id="contactform">
+                  <form action="javascript:void(0);" onSubmit={handleSubmit} name="contactform" id="contactform">
                     <div className="name-box">
                       <input
                         name="name"
@@ -206,7 +215,13 @@ export default function ContactPage() {
                       <div className="clapat-button-wrap parallax-wrap hide-ball">
                         <div className="clapat-button parallax-element">
                           <div className="button-border rounded">
-                            <input type="submit" className="send_message" id="submit" value="Send Mail" />
+                            <input
+                              type="submit"
+                              className="send_message"
+                              id="submit"
+                              value={isSubmitting ? "Sending..." : "Send Mail"}
+                              disabled={isSubmitting}
+                            />
                           </div>
                         </div>
                       </div>
