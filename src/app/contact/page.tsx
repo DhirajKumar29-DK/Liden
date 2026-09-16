@@ -29,9 +29,13 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (isSubmitting) return;
 
     if (formData.verify.trim() !== "4") {
       setStatusMsg("Captcha validation failed! (1 + 3 = 4)");
@@ -214,14 +218,28 @@ export default function ContactPage() {
                     <div className="button-box has-animation" data-delay="100">
                       <div className="clapat-button-wrap parallax-wrap hide-ball">
                         <div className="clapat-button parallax-element">
-                          <div className="button-border rounded">
-                            <input
+                          <div className="button-border rounded" style={{ cursor: "pointer" }}>
+                            <button
                               type="submit"
+                              onClick={handleSubmit}
                               className="send_message"
                               id="submit"
-                              value={isSubmitting ? "Sending..." : "Send Mail"}
                               disabled={isSubmitting}
-                            />
+                              style={{
+                                cursor: "pointer",
+                                position: "relative",
+                                zIndex: 10,
+                                width: "100%",
+                                height: "100%",
+                                background: "transparent",
+                                border: "none",
+                                outline: "none",
+                                color: "inherit",
+                                font: "inherit",
+                              }}
+                            >
+                              {isSubmitting ? "Sending..." : "Send Mail"}
+                            </button>
                           </div>
                         </div>
                       </div>
