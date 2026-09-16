@@ -215,32 +215,35 @@ export default function ContactPage() {
                       </p>
                     </div>
 
-                    <div className="button-box has-animation" data-delay="100">
-                      <div className="clapat-button-wrap parallax-wrap hide-ball">
-                        <div className="clapat-button parallax-element">
-                          <div className="button-border rounded" style={{ cursor: "pointer" }}>
-                            <button
-                              type="submit"
-                              onClick={handleSubmit}
-                              className="send_message"
-                              id="submit"
-                              disabled={isSubmitting}
-                              style={{
-                                cursor: "pointer",
-                                position: "relative",
-                                zIndex: 10,
-                                width: "100%",
-                                height: "100%",
-                                background: "transparent",
-                                border: "none",
-                                outline: "none",
-                                color: "inherit",
-                                font: "inherit",
-                              }}
-                            >
-                              {isSubmitting ? "Sending..." : "Send Mail"}
-                            </button>
-                          </div>
+                    <div className="button-box text-align-center" style={{ marginTop: "40px" }}>
+                      <div className="clapat-button-wrap hide-ball" style={{ display: "inline-block" }}>
+                        <div className="clapat-button">
+                          <button
+                            type="submit"
+                            onClick={handleSubmit}
+                            className="send_message"
+                            id="submit"
+                            disabled={isSubmitting}
+                            style={{
+                              cursor: isSubmitting ? "not-allowed" : "pointer",
+                              position: "relative",
+                              zIndex: 99,
+                              padding: "14px 45px",
+                              backgroundColor: "#ffffff",
+                              color: "#000000",
+                              border: "2px solid #ffffff",
+                              borderRadius: "35px",
+                              fontSize: "16px",
+                              fontWeight: "600",
+                              letterSpacing: "0.5px",
+                              display: "inline-block",
+                              outline: "none",
+                              transition: "all 0.3s ease",
+                              opacity: isSubmitting ? 0.7 : 1,
+                            }}
+                          >
+                            {isSubmitting ? "Sending Message..." : "Send Mail"}
+                          </button>
                         </div>
                       </div>
                     </div>
