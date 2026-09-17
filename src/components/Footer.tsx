@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
   const pathname = usePathname();
 
-  const isHighlights = ["/index-highlights.html", "/index-highlights", "/highlights"].includes(pathname);
-  const isPlayground = ["/index-playground.html", "/index-playground", "/playground"].includes(pathname);
+  const isHighlights = pathname === "/highlights";
+  const isPlayground = pathname === "/playground";
 
   return (
     <footer className="clapat-footer hidden">

@@ -7,7 +7,6 @@ export async function generateStaticParams() {
   projectsData.forEach((project) => {
     params.push({ slug: project.slug });
     params.push({ slug: project.numSlug });
-    params.push({ slug: project.htmlSlug });
   });
   return params;
 }
@@ -20,7 +19,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     (p) =>
       p.slug === targetSlug ||
       p.numSlug === targetSlug ||
-      p.htmlSlug === targetSlug ||
       p.id === targetSlug
   );
 

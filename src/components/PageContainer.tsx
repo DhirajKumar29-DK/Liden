@@ -11,16 +11,16 @@ export default function PageContainer({ children }: { children: React.ReactNode 
   let bgColor = "#ebebeb";
   let contentTheme = "dark-content";
 
-  if (["/index-playground.html", "/index-playground", "/playground"].includes(pathname)) {
+  if (pathname === "/playground") {
     bgColor = "#000000";
     contentTheme = "light-content";
-  } else if (["/contact.html", "/contact"].includes(pathname)) {
+  } else if (pathname === "/contact") {
     bgColor = "#0c0c0c";
     contentTheme = "light-content";
   } else if (pathname.startsWith("/project/")) {
     const slug = pathname.replace("/project/", "");
     const project = projectsData.find(
-      (p) => p.slug === slug || p.numSlug === slug || p.htmlSlug === slug
+      (p) => p.slug === slug || p.numSlug === slug
     );
     if (project) {
       bgColor = project.bgColor || "#ebebeb";

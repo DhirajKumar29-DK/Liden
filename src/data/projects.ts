@@ -1,7 +1,6 @@
 export interface Project {
   id: string;
   slug: string;
-  htmlSlug: string;
   numSlug: string;
   title: string;
   subtitle: string;
@@ -21,7 +20,6 @@ export const projectsData: Project[] = [
   {
     id: "01",
     slug: "bobs-specials",
-    htmlSlug: "project01.html",
     numSlug: "project01",
     title: "Bob's Specials",
     subtitle: "Branding",
@@ -39,7 +37,6 @@ export const projectsData: Project[] = [
   {
     id: "02",
     slug: "this-is-willo",
-    htmlSlug: "project02.html",
     numSlug: "project02",
     title: "This is Willo",
     subtitle: "Web Design",
@@ -57,7 +54,6 @@ export const projectsData: Project[] = [
   {
     id: "03",
     slug: "the-infin",
-    htmlSlug: "project03.html",
     numSlug: "project03",
     title: "The Infin",
     subtitle: "Photography",
@@ -75,7 +71,6 @@ export const projectsData: Project[] = [
   {
     id: "04",
     slug: "the-invincibles",
-    htmlSlug: "project04.html",
     numSlug: "project04",
     title: "The Invincibles",
     subtitle: "App Development",
@@ -93,7 +88,6 @@ export const projectsData: Project[] = [
   {
     id: "05",
     slug: "provenance",
-    htmlSlug: "project05.html",
     numSlug: "project05",
     title: "Provenance",
     subtitle: "Architectural Visuals",
@@ -111,7 +105,6 @@ export const projectsData: Project[] = [
   {
     id: "06",
     slug: "unbreak",
-    htmlSlug: "project06.html",
     numSlug: "project06",
     title: "Unbreak",
     subtitle: "Fashion Editorial",
@@ -129,7 +122,6 @@ export const projectsData: Project[] = [
   {
     id: "07",
     slug: "kouch-dominion",
-    htmlSlug: "project07.html",
     numSlug: "project07",
     title: "Kouch Dominion",
     subtitle: "SaaS Platform",
@@ -147,7 +139,6 @@ export const projectsData: Project[] = [
   {
     id: "08",
     slug: "vx-lab",
-    htmlSlug: "project08.html",
     numSlug: "project08",
     title: "VX Lab",
     subtitle: "Audio Hardware",
@@ -165,7 +156,6 @@ export const projectsData: Project[] = [
   {
     id: "09",
     slug: "mimco-blue",
-    htmlSlug: "project09.html",
     numSlug: "project09",
     title: "Mimco Blue",
     subtitle: "Luxury Goods",
